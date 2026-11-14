@@ -1,0 +1,110 @@
+import { bootstrapApplication } from '@angular/platform-browser';
+import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
+import { provideHttpClient } from '@angular/common/http';
+import { addIcons } from 'ionicons';
+import {
+  filmOutline,
+  tvOutline,
+  searchOutline,
+  star,
+  starOutline,
+  sparklesOutline,
+  calendarOutline,
+  timeOutline,
+  peopleOutline,
+  personOutline,
+  personCircleOutline,
+  chatbubblesOutline,
+  addCircleOutline,
+  createOutline,
+  trashOutline,
+  checkmarkCircle,
+  checkmarkOutline,
+  closeOutline,
+  funnelOutline,
+  swapVerticalOutline,
+  flameOutline,
+  ribbonOutline,
+  shieldCheckmarkOutline,
+  logOutOutline,
+  logInOutline,
+  arrowBackOutline,
+  chevronBackOutline,
+  chevronForwardOutline,
+  cloudDownloadOutline,
+  eyeOutline,
+  warningOutline,
+  alertCircleOutline,
+  optionsOutline,
+  trophyOutline,
+  heartOutline,
+  gridOutline,
+  albumsOutline,
+  syncOutline,
+  imagesOutline,
+  wifiOutline,
+  ribbon,
+  people,
+  film,
+  tv
+} from 'ionicons/icons';
+
+import { routes } from './app/app.routes';
+import { AppComponent } from './app/app.component';
+
+addIcons({
+  'film-outline': filmOutline,
+  'tv-outline': tvOutline,
+  'search-outline': searchOutline,
+  'star': star,
+  'star-outline': starOutline,
+  'sparkles-outline': sparklesOutline,
+  'calendar-outline': calendarOutline,
+  'time-outline': timeOutline,
+  'people-outline': peopleOutline,
+  'person-outline': personOutline,
+  'person-circle-outline': personCircleOutline,
+  'chatbubbles-outline': chatbubblesOutline,
+  'add-circle-outline': addCircleOutline,
+  'create-outline': createOutline,
+  'trash-outline': trashOutline,
+  'checkmark-circle': checkmarkCircle,
+  'checkmark-outline': checkmarkOutline,
+  'close-outline': closeOutline,
+  'funnel-outline': funnelOutline,
+  'swap-vertical-outline': swapVerticalOutline,
+  'flame-outline': flameOutline,
+  'ribbon-outline': ribbonOutline,
+  'shield-checkmark-outline': shieldCheckmarkOutline,
+  'log-out-outline': logOutOutline,
+  'log-in-outline': logInOutline,
+  'arrow-back-outline': arrowBackOutline,
+  'chevron-back-outline': chevronBackOutline,
+  'chevron-forward-outline': chevronForwardOutline,
+  'cloud-download-outline': cloudDownloadOutline,
+  'eye-outline': eyeOutline,
+  'warning-outline': warningOutline,
+  'alert-circle-outline': alertCircleOutline,
+  'options-outline': optionsOutline,
+  'trophy-outline': trophyOutline,
+  'heart-outline': heartOutline,
+  'grid-outline': gridOutline,
+  'albums-outline': albumsOutline,
+  'sync-outline': syncOutline,
+  'images-outline': imagesOutline,
+  'wifi-outline': wifiOutline,
+  'ribbon': ribbon,
+  'people': people,
+  'film': film,
+  'tv': tv
+});
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideIonicAngular({ mode: 'ios' }),
+    provideHttpClient(),
+    provideRouter(routes, withPreloading(PreloadAllModules))
+  ]
+}).catch(err => console.error(err));
